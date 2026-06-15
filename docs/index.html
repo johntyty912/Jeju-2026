@@ -83,6 +83,7 @@ const NAVER = q => "https://map.naver.com/v5/search/" + encodeURIComponent(q);
 
 const panels = [
   { id:"transport", tab:"🚗 交通", custom:"transport" },
+  { id:"booking", tab:"📋 預約", custom:"booking" },
   { id:"d1", tab:"Day 1", date:"6/20（六）", title:"抵達 → 機場汗蒸幕 → 西歸浦", tags:["輕鬆","汗蒸幕"], transport:"巴士600 → KAL",
     note:{cls:"spa",text:"🛁 通宵機攰 + 15:00 先 check-in，中間去機場汗蒸幕沖涼/浸浴/瞓覺充電，最爽。"},
     items:[
@@ -186,6 +187,47 @@ const TRANSPORT = `
 <li>瞓汗蒸幕嗰晚帶細袋裝隨身/翌日衫，行李擺儲物櫃。</li>
 </ul>`;
 
+const BOOKING = `
+<h3 class="sec">🛂 出發前必做</h3>
+<div class="note warn">⚠️ <b>2026 新規：e-Arrival Card 電子入境卡</b> —— 所有旅客（包括免簽地區）要喺<b>抵韓前 3 日內</b>網上填妥。官網 <b>e-arrivalcard.go.kr</b>（免費），填完截圖。</div>
+<ul class="tips">
+<li><b>K-ETA</b>：香港護照 <b>2026 全年豁免</b>，唔使申請 ✅（2027/1/1 起先要）。</li>
+<li>護照有效期 <b>6 個月</b>以上；HK Express 起飛前 90 分到機場 check-in。</li>
+</ul>
+
+<h3 class="sec">📱 落機前裝好（App / 上網 / 錢）</h3>
+<ul class="tips">
+<li><b>上網</b>：eSIM / 上網卡 / Wifi 蛋，Klook / KKday / Trazy 買（韓國 5G eSIM 約 HK$30–60/週），落機開機即用。</li>
+<li><b>必裝 App</b>：Kakao T（叫車）· Naver Map（導航，Google Map 喺韓國唔準）· Papago（翻譯）· CatchTable（餐廳訂位）。</li>
+<li><b>錢/交通卡</b>：機場 <b>WOWPASS</b> 自助機入韓圜，可當 T-money 拍巴士/地鐵 + 退稅方便（推介）；或便利店（CU/GS25）買 <b>T-money</b> 卡 ~₩3,000 再增值。留啲現金畀的士/市場細店。</li>
+<li>Kakao T 可綁海外信用卡畀車費；巴士600 / 市區巴士用 T-money 拍卡或現金（₩5,000）。</li>
+</ul>
+
+<h3 class="sec">🎟️ 要預約 / 可預先買飛</h3>
+<table>
+<tr><th>項目</th><th>點搞</th><th>備註</th></tr>
+<tr><td>漢拿山登頂<br>（Day4 方案A）</td><td>官網 <b>visithalla.jeju.go.kr</b> 預約（免費・QR 入閘）</td><td>城板岳1000/觀音寺500 人/日，月頭開放下月、極搶。制度間中有變，去前再確認。唔行山就跳過</td></tr>
+<tr><td>熱門餐廳<br>（夢炭等）</td><td><b>CatchTable</b> App 早訂</td><td>London Bagel / 黑豬肉多數靠排隊，唔接訂位</td></tr>
+<tr><td>산방산탄산온천<br>（Day2 可選）</td><td>現場買，或 WAUG/Klook 平少少</td><td>成人 ₩14,000・walk-in OK</td></tr>
+<tr><td>景點門票<br>（泰迪熊/翰林公園/<br>Camellia Hill/Eco Land/Zarolo）</td><td>Klook/KKday/WAUG/Trazy 電子票</td><td>平少少又免排隊；現場一樣買到</td></tr>
+<tr><td>牛島渡輪<br>（Day3 可選）</td><td>城山港現場買，<b>帶護照</b></td><td>唔使預約，班次密</td></tr>
+<tr><td>汗蒸幕<br>（용두암/도두해수파크）</td><td>walk-in，唔使訂</td><td>最後一晚去 도두 前打 <b>064-711-1000</b> 確認通宵 수면실</td></tr>
+</table>
+
+<h3 class="sec">🛍️ 手信買乜（買加工品，鮮果帶唔到）</h3>
+<ul class="tips">
+<li>柑橘朱古力 · 柑橘果醬/果凍 · 漢拿峰零食 · 馬格利 · O'Sulloc 綠茶。</li>
+<li>邊度買：東門市場 · 每日偶來市場 · 免稅店 · 機場。</li>
+<li><b>退稅</b>：單張滿 ₩15,000 可退；用 WOWPASS 最方便。</li>
+</ul>
+
+<h3 class="sec">🔗 買飛平台</h3>
+<ul class="tips">
+<li><b>Klook / KKday</b>：中文介面，景點門票、eSIM、接送。</li>
+<li><b>WAUG / Trazy</b>：景點門票、溫泉、體驗。</li>
+<li><b>CatchTable / Naver 예약</b>：餐廳訂位。</li>
+</ul>`;
+
 const nav = document.getElementById("nav");
 const main = document.getElementById("main");
 
@@ -199,6 +241,7 @@ panels.forEach((p,i)=>{
   const panel = document.createElement("section");
   panel.className = "panel" + (i===0?" active":"");
   if(p.custom==="transport"){ panel.innerHTML = TRANSPORT; }
+  else if(p.custom==="booking"){ panel.innerHTML = BOOKING; }
   else {
     let h = `<div class="dayhead"><span class="daynum">${p.tab}</span>
       <div><div class="daytitle">${p.title}</div><div class="daydate">${p.date}</div></div></div>`;
