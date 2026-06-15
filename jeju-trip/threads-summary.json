@@ -1,0 +1,403 @@
+{
+  "generated": "2026-06-15",
+  "source": "threads-urls.txt",
+  "note": "Extracted from Threads/YouTube posts. Text-based posts were captured in full; image/map-only posts were read via screenshot OCR and are marked extraction_method='image_ocr' (some carousel slides could not be reliably OCR'd and are flagged in notes).",
+  "regions": {
+    "jeju_city_north": "Jeju City / north (airport, Dongmun Market, Yongduam, downtown, Yeon-dong)",
+    "seogwipo_south": "Seogwipo / south (Jungmun resort zone, waterfalls, Olle Market)",
+    "aewol_hallim_west": "Aewol / Hallim / west (cafe street, Hyeopjae, Hallim Park)",
+    "seongsan_udo_hamdeok_east": "Seongsan / Udo / Hamdeok / east (Ilchulbong, Manjanggul, Woljeongri, Seopjikoji)",
+    "central_hallasan": "Central / Hallasan (Hallasan, Sangumburi, Osulloc)",
+    "general": "General Korea / multi-region / not Jeju-specific"
+  },
+  "posts": [
+    {
+      "index": 1,
+      "url": "https://www.threads.com/@liyan.clinic_jeju/post/DZEwKpgifFM",
+      "account": "liyan.clinic_jeju",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "五天四晚濟州島旅遊攻略來咯 (5-day 4-night Jeju travel guide)",
+      "tags": ["itinerary"],
+      "places": [
+        {"name": "Whistlestar Hotel", "category": "hotel", "region": "jeju_city_north"},
+        {"name": "東門市場 (Dongmun Market)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "Audrane/Odurang Bakery", "category": "cafe", "region": "aewol_hallim_west"}
+      ],
+      "notes": "Illustrated Day1-Day5 itinerary maps (Hello Kitty style). Most detail embedded in map images; only prominent labels OCR'd."
+    },
+    {
+      "index": 2,
+      "url": "https://www.threads.com/@roolez553/post/DZPV7PhGJzW",
+      "account": "roolez553",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "濟州島避雷清單 (Jeju pitfalls checklist): book rental car early; Jeju City to Seogwipo is ~1hr so plan same-side routes; ask locals about black pork street; weather changes fast; Hallasan summit needs very early start; Seongsan Ilchulbong go at dawn; airport domestic/intl exits differ; use T-Map over Naver/Google for driving; book haenyeo village restaurant ahead; entry fees extra; canola/hydrangea are seasonal; Seogwipo lodging cheaper than Jeju City; convenience stores pricey; Jeju snacks sold at airport; arrive early for return flight.",
+      "tags": ["itinerary", "transport"],
+      "places": [
+        {"name": "漢拿山 (Hallasan)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "城山日出峰 (Seongsan Ilchulbong)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "黑豬肉街 (Black Pork Street)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "濟州機場 (Jeju Airport)", "category": "transport", "region": "jeju_city_north"},
+        {"name": "海女村 (Haenyeo Village restaurant)", "category": "restaurant", "region": "seongsan_udo_hamdeok_east"}
+      ],
+      "notes": "Practical tips post; useful for trip logistics."
+    },
+    {
+      "index": 3,
+      "url": "https://www.threads.com/@hisoftplanet/post/DZTk9l6E0yn",
+      "account": "hisoftplanet",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "8 must-eat Jeju list with Naver Map names, plus a 5-day accommodation guide by region (full 14-slide carousel).",
+      "tags": ["restaurant", "cafe", "hotel", "itinerary"],
+      "places": [
+        {"name": "만복흑돼지 Manbok Black Pork (#1 ranked black pork)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "돌담흑돼지 제주공항점 Doldam Black Pork (airport branch)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "칠돈가 Childonga", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "명진전복 Myeongjin Abalone (abalone hot-pot rice)", "category": "restaurant", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "한라전복 Hanla Abalone (near Seongsan)", "category": "restaurant", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "호정이네 Hojeongine (cutlassfish)", "category": "restaurant", "region": "seogwipo_south"},
+        {"name": "색달식당 Saekdal Sikdang (Jungmun)", "category": "restaurant", "region": "seogwipo_south"},
+        {"name": "네거리식당 Negeori Sikdang (Olle Market)", "category": "restaurant", "region": "seogwipo_south"},
+        {"name": "자매국수 Jamae Guksu (pork noodles, near airport)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "올래국수 Ollae Guksu", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "국수바다 Guksubada", "category": "restaurant", "region": "seogwipo_south"},
+        {"name": "지미스 Jimmy's (Udo peanut ice cream)", "category": "cafe", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "블랑로쉐 Blanc Rocher (Udo sea-view)", "category": "cafe", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "우도왕자이야기 Udo Prince Story", "category": "cafe", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "오드랑 베이커리 Odurang Bakery (garlic baguette)", "category": "cafe", "region": "aewol_hallim_west"},
+        {"name": "동문재래시장 Dongmun Traditional Market", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "서귀포 매일올레시장 Seogwipo Maeil Olle Market", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "Grand Hyatt Jeju", "category": "hotel", "region": "jeju_city_north"},
+        {"name": "Regent Marine Blue (麗晶濱海藍色)", "category": "hotel", "region": "jeju_city_north"},
+        {"name": "Lotte City Hotel Jeju (樂天城市)", "category": "hotel", "region": "jeju_city_north"},
+        {"name": "Parnas Hotel Jeju (帕納斯)", "category": "hotel", "region": "seogwipo_south"},
+        {"name": "Shilla Jeju (濟州新羅)", "category": "hotel", "region": "seogwipo_south"},
+        {"name": "JW Marriott Jeju", "category": "hotel", "region": "seogwipo_south"},
+        {"name": "Sally's Jeju", "category": "hotel", "region": "aewol_hallim_west"},
+        {"name": "Olle Resort & Spa", "category": "hotel", "region": "aewol_hallim_west"},
+        {"name": "Gloucester Hamdeok", "category": "hotel", "region": "seongsan_udo_hamdeok_east"}
+      ],
+      "notes": "Highest-value post: detailed eats + lodging by region. Suggests 2 nights Jeju City + 2 nights Seogwipo to avoid backtracking."
+    },
+    {
+      "index": 4,
+      "url": "https://www.threads.com/@chiuwuu/post/DZSf6zllJFF",
+      "account": "chiuwuu",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "濟州島不專業吃吃特輯 — 11 food spots with Naver Map addresses (in images).",
+      "tags": ["restaurant", "cafe"],
+      "places": [
+        {"name": "Gwanghwa Awoo (광화아우, seafood)", "category": "restaurant", "region": "general"},
+        {"name": "Suiseongdo/Sukseongdo (수성도, black pork BBQ)", "category": "restaurant", "region": "general"},
+        {"name": "Oreun (오른, sea-view cafe)", "category": "cafe", "region": "general"}
+      ],
+      "notes": "11-spot carousel; only first 3 slides OCR'd, remaining 8 not reliably readable."
+    },
+    {
+      "index": 5,
+      "url": "https://www.threads.com/@popbee/post/DZRhmLXElB9",
+      "account": "popbee",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "JISOO-themed Jeju 'dreamy coastline' route map — packaged scenic checkpoint route along the coast.",
+      "tags": ["sightseeing", "itinerary"],
+      "places": [],
+      "notes": "Celebrity/marketing illustrated coastal-route map; individual place labels too small to OCR reliably."
+    },
+    {
+      "index": 6,
+      "url": "https://www.threads.com/@oganacell_kr/post/DZWaoh5Gd-y",
+      "account": "oganacell_kr",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "韓國自由行新手注意事項 (Korea first-timer prep): Naver Map, Kakao Taxi, Apple Pay/credit, Papago, CatchTable, e-Arrival Card, 220V plugs, baggage allowance, tax-refund threshold 15,000 KRW, bus tap-in/out, download apps, bring meds, travel insurance, shop on last day.",
+      "tags": ["itinerary", "transport"],
+      "places": [],
+      "notes": "General Korea prep, not Jeju-specific. Useful checklist."
+    },
+    {
+      "index": 7,
+      "url": "https://www.threads.com/@liyan.clinic_jeju/post/DZWc6RZCabd",
+      "account": "liyan.clinic_jeju",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "想去的地方｜想吃的美食｜想囤的好物 — single cute Jeju map labelling attractions by region (West/City/East/South lines).",
+      "tags": ["itinerary", "sightseeing"],
+      "places": [
+        {"name": "新羅樂天免稅店 (Shilla/Lotte Duty Free)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "濟州市步行街 (Jeju City pedestrian/shopping st)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "黑豬和海鮮街 (Black Pork & Seafood St)", "category": "restaurant", "region": "jeju_city_north"},
+        {"name": "東門市場 (Dongmun Market)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "濟州國際機場 (Jeju Airport)", "category": "transport", "region": "jeju_city_north"},
+        {"name": "咸德海水浴場 (Hamdeok Beach)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "月汀里海邊 (Woljeongri Beach)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "迷宮公園 (Gimnyeong Maze Park)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "牛島燈塔 / 牛島 (Udo Lighthouse / Udo)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "城山日出峰 (Seongsan Ilchulbong)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "涉地可支 (Seopjikoji)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "山君不離 (Sangumburi)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "森林小火車 (Eco Land forest train)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "海洋公園 (Aqua Planet)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "涯月邑 (Aewol-eup)", "category": "sightseeing", "region": "aewol_hallim_west"},
+        {"name": "挾才海水浴場 (Hyeopjae Beach)", "category": "sightseeing", "region": "aewol_hallim_west"},
+        {"name": "翰林公園 (Hallim Park)", "category": "sightseeing", "region": "aewol_hallim_west"},
+        {"name": "山茶花之丘 (Camellia Hill)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "泰迪熊博物館 (Teddy Bear Museum)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "小人國主題樂園 (Soinguk Miniature Theme Park)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "山房山 (Sanbangsan)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "漢拿山 (Hallasan)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "柱狀節理帶 (Jusangjeolli Cliff)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "天地淵瀑布 (Cheonjiyeon Falls)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "獨立岩 (Oedolgae Rock)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "中文海水浴場 (Jungmun Beach)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "西歸浦每日偶來市場 (Seogwipo Maeil Olle Market)", "category": "sightseeing", "region": "seogwipo_south"}
+      ],
+      "notes": "Excellent region-organized attractions map; OCR'd cleanly. Great backbone for the route plan."
+    },
+    {
+      "index": 8,
+      "url": "https://www.threads.com/@dai.dai_22/post/DZT5PlCj-KO",
+      "account": "dai.dai_22",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "Debate on best Korea travel apps (eSIM, Naver Maps, Papago, Google Maps, Kakao T, WOWPASS) + asking for solo Seoul lodging. Mostly Seoul-focused.",
+      "tags": ["transport", "itinerary"],
+      "places": [],
+      "notes": "General Korea app discussion, not Jeju-specific."
+    },
+    {
+      "index": 9,
+      "url": "https://www.threads.com/@emily_haircare/post/DZW6St5k3kU",
+      "account": "emily_haircare",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "Long review of a haenyeo-run BBQ ('海女烤肉') where the owner is a haenyeo and dives for the sea urchin herself; Ji Chang-wook reportedly ate here. Praised tender pork, seaweed/garlic sauce, marinated perilla leaves, and seafood ramen. Author's #1 Jeju meal.",
+      "tags": ["restaurant"],
+      "places": [
+        {"name": "海女烤肉 (Haenyeo BBQ) — addr per comments: Yeon-dong 連洞 1413-2", "category": "restaurant", "region": "jeju_city_north"}
+      ],
+      "notes": "Also mentions an unnamed standout pasta place ('人生義大利麵')."
+    },
+    {
+      "index": 10,
+      "url": "https://youtu.be/cJlM-zCRQOU",
+      "account": "YouTube",
+      "platform": "youtube",
+      "extraction_method": "webfetch",
+      "post_text": "【濟州島自駕遊EP3】東門市場美食｜巨型超好食雪花冰｜遇濟州貓超巨超肥｜濟州都有唐僧 — Jeju self-driving vlog EP3: Dongmun Market food, giant bingsu (snowflake ice), Jeju cats.",
+      "tags": ["itinerary", "restaurant", "sightseeing"],
+      "places": [
+        {"name": "東門市場 (Dongmun Market)", "category": "restaurant", "region": "jeju_city_north"}
+      ],
+      "notes": "Travel vlog; channel/description not fully exposed."
+    },
+    {
+      "index": 11,
+      "url": "https://www.threads.com/@_amber.lin/post/DZbY8qekqVb",
+      "account": "_amber.lin",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "Crowd-sourced 'what to do in Jeju?' question with many helpful replies covering must-go, must-eat, must-buy, cafes and shops.",
+      "tags": ["itinerary", "sightseeing", "restaurant", "cafe"],
+      "places": [
+        {"name": "城山日出峰 (Seongsan Ilchulbong)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "牛島 (Udo)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "萬丈窟 (Manjanggul Cave)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "涉地可支 (Seopjikoji)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "終達里 (Jongdal-ri, hydrangea fields)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "O'Sulloc 茶博物館 (Osulloc Tea Museum)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "白鹿潭 (Baengnokdam, Hallasan crater)", "category": "sightseeing", "region": "central_hallasan"},
+        {"name": "東門市場 (Dongmun Market)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "涯月邑 海景咖啡 (Aewol coastal cafes)", "category": "cafe", "region": "aewol_hallim_west"},
+        {"name": "Blue Bottle Jeju (藍瓶)", "category": "cafe", "region": "general"},
+        {"name": "London Bagels", "category": "cafe", "region": "general"},
+        {"name": "Blue Elephant", "category": "cafe", "region": "general"},
+        {"name": "海鮮辛拉麵 Noraba (spicy seafood ramen)", "category": "restaurant", "region": "aewol_hallim_west"},
+        {"name": "橘子舒芙蕾 Teuraibeu (tangerine souffle)", "category": "cafe", "region": "general"},
+        {"name": "一品豆腐店 (tofu + soy-marinated crab)", "category": "restaurant", "region": "general"},
+        {"name": "烤鰻魚 (grilled eel)", "category": "restaurant", "region": "general"},
+        {"name": "가르송티미드 Garcon Timide (한림로 542)", "category": "cafe", "region": "aewol_hallim_west"},
+        {"name": "Lifestyle shops: 943studio, Mumu jeju, Jeju meow, Classic moongusa, Mandarin island (perfume)", "category": "sightseeing", "region": "general"}
+      ],
+      "notes": "Reply thread is a goldmine of crowd recommendations; several without exact region."
+    },
+    {
+      "index": 12,
+      "url": "https://www.threads.com/@bear_900421/post/DZaBLzwDwFd",
+      "account": "bear_900421",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "濟州島食物篇 — food highlights: aged-meat BBQ, garlic bread, Udo burger, Hallasan fried rice, Myeongjin abalone, Aewol cafe street, the long-queue seafood ramen, a bagel museum, a 3-generation noodle hall.",
+      "tags": ["restaurant", "cafe"],
+      "places": [
+        {"name": "熟成道 Sukseongdo (aged-meat BBQ)", "category": "restaurant", "region": "general"},
+        {"name": "明珍鮑魚 Myeongjin Abalone", "category": "restaurant", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "海鮮拉麵 Noraba (Aewol-eup, Sineom-ri)", "category": "restaurant", "region": "aewol_hallim_west"},
+        {"name": "涯月咖啡一條街 (Aewol Cafe Street)", "category": "cafe", "region": "aewol_hallim_west"},
+        {"name": "牛島漢堡 (Udo burger)", "category": "restaurant", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "漢拿山炒飯 (Hallasan fried rice restaurant)", "category": "restaurant", "region": "general"},
+        {"name": "貝果博物館 (London Bagel Museum)", "category": "cafe", "region": "general"},
+        {"name": "三代麵條會館 (3-generation noodle hall)", "category": "restaurant", "region": "general"},
+        {"name": "月高家 Wolgoga (BBQ, from comments)", "category": "restaurant", "region": "general"},
+        {"name": "大蒜麵包 Odurang garlic bread", "category": "cafe", "region": "aewol_hallim_west"}
+      ],
+      "notes": "Noraba address confirmed in comments: Aewol-eup Sineom-ri 2723-5."
+    },
+    {
+      "index": 13,
+      "url": "https://www.threads.com/@pjhappylife/post/DZbyAB5D9F6",
+      "account": "pjhappylife",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "London Bagel Museum Jeju review — honey-butter & scallion-cheese bagels, Maple Pecan spread, matcha latte; vintage British interior, very photogenic, 5 stars.",
+      "tags": ["cafe"],
+      "places": [
+        {"name": "London Bagel Museum 런던베이글뮤지엄 (Jeju branch)", "category": "cafe", "region": "jeju_city_north"}
+      ],
+      "notes": "Popular bagel cafe; expect queues."
+    },
+    {
+      "index": 14,
+      "url": "https://www.threads.com/@xinmedia/post/DZcQOgBkkk4",
+      "account": "xinmedia",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "New Jeju attraction: 'Zarolo Museum' immersive light/media art venue — no 3D glasses needed; journey from Jeju mythology to a starry universe.",
+      "tags": ["sightseeing"],
+      "places": [
+        {"name": "Zarolo Museum (immersive art)", "category": "sightseeing", "region": "general"}
+      ],
+      "notes": "Newly opened; good rainy-day / indoor option."
+    },
+    {
+      "index": 15,
+      "url": "https://www.threads.com/@le_hui0123/post/DZcdYYMGuTV",
+      "account": "le_hui0123",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "濟州島食物篇 — store list given in pinned comment.",
+      "tags": ["restaurant", "cafe"],
+      "places": [
+        {"name": "Unidam 우니담 (sea urchin)", "category": "restaurant", "region": "general"},
+        {"name": "UDORO 93 우도로93 (Udo)", "category": "cafe", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "Honjeo Black Pork 혼저 흑돼지", "category": "restaurant", "region": "general"},
+        {"name": "대원가 Daewonga", "category": "restaurant", "region": "general"},
+        {"name": "할머니떡집 (Grandma's rice-cake shop)", "category": "cafe", "region": "general"},
+        {"name": "Odurang Bakery 오드랑베이커리", "category": "cafe", "region": "aewol_hallim_west"},
+        {"name": "BLANC ROCHER 블랑로쉐 (Udo)", "category": "cafe", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "orrrn 오른 (cafe)", "category": "cafe", "region": "general"}
+      ],
+      "notes": "Caption + pinned comment provide all 8 names; per-item region not given."
+    },
+    {
+      "index": 16,
+      "url": "https://www.threads.com/@s_loststar/post/DZeFVKhCvwV",
+      "account": "s_loststar",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "濟州島最喜歡的9個必吃必去 — 9 favorites.",
+      "tags": ["itinerary", "restaurant", "cafe", "sightseeing"],
+      "places": [
+        {"name": "孝利家民宿 (Lee Hyori's Homestay/B&B)", "category": "sightseeing", "region": "general"},
+        {"name": "城山日出峰 (Seongsan Ilchulbong)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "黑妹黑豬肉 (black pork BBQ, no-queue)", "category": "restaurant", "region": "general"},
+        {"name": "夢炭燒肉 Mongtan BBQ", "category": "restaurant", "region": "general"},
+        {"name": "倫敦貝果 London Bagel", "category": "cafe", "region": "general"},
+        {"name": "Suwarae Bakery", "category": "cafe", "region": "general"},
+        {"name": "海女飯捲 (Haenyeo gimbap)", "category": "restaurant", "region": "general"},
+        {"name": "濟州豬肉麵 (Jeju pork noodles, near airport)", "category": "restaurant", "region": "jeju_city_north"}
+      ],
+      "notes": "Also recommends Jeju-limited UNIQLO tee as a souvenir."
+    },
+    {
+      "index": 17,
+      "url": "https://www.threads.com/@xiaoxiong9579/post/DZg_udQkRQl",
+      "account": "xiaoxiong9579",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "濟州島逛街攻略 — must-visit clothing & lifestyle/cultural-creative shops in Jeju, organized N/E/S/W; 'Woljeongri area & OBJECT area are great for browsing with sea views'.",
+      "tags": ["sightseeing", "itinerary"],
+      "places": [
+        {"name": "龍頭岩 (Yongduam Rock)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "東門市場 (Dongmun Market)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "咸德海水浴場 (Hamdeok Beach)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "月汀里海邊 (Woljeongri Beach, shops)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "牛島 (Udo, plant goods shop & cafe)", "category": "sightseeing", "region": "seongsan_udo_hamdeok_east"},
+        {"name": "OBJECT (select/lifestyle shop)", "category": "sightseeing", "region": "general"},
+        {"name": "LEERHANT", "category": "sightseeing", "region": "general"}
+      ],
+      "notes": "Shopping/lifestyle-store guide (collage). North/East slides OCR'd; later slides partially read."
+    },
+    {
+      "index": 18,
+      "url": "https://www.threads.com/@hi.nihaoso/post/DZhH8_vCSLK",
+      "account": "hi.nihaoso",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "Jeju's hardest-to-book grill — must order straw-smoked beef short rib. 📍夢炭 (Mongtan). Bookable via CatchTable.",
+      "tags": ["restaurant"],
+      "places": [
+        {"name": "夢炭 Mongtan (straw-smoked beef short rib)", "category": "restaurant", "region": "general"}
+      ],
+      "notes": "Reserve via CatchTable in advance."
+    },
+    {
+      "index": 19,
+      "url": "https://www.threads.com/@d__._._bzzz/post/DZjQLUSE9To",
+      "account": "d__._._bzzz",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "'Feel Jeju prices in NT$' video — costs are high (esp. cutlassfish/seafood); markets pricey; mentions a transparent/clear-bottom speedboat experience and circling the whole island. Comment thread adds medical-aesthetics price list.",
+      "tags": ["itinerary"],
+      "places": [
+        {"name": "東門市場 (Dongmun Market)", "category": "sightseeing", "region": "jeju_city_north"},
+        {"name": "偶來市場 (Olle Market)", "category": "sightseeing", "region": "seogwipo_south"},
+        {"name": "透明快艇 (clear-bottom speedboat experience)", "category": "transport", "region": "general"}
+      ],
+      "notes": "Budgeting reference; lodging/speedboat details promised in a follow-up video."
+    },
+    {
+      "index": 20,
+      "url": "https://www.threads.com/@cindy781222/post/DZhLaZemjc3",
+      "account": "cindy781222",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "涯月鮭魚本店 (Aewol Salmon main store) — popular salmon sashimi/sushi specialist. Addr: Jeju-si Aewol-eup Haso-ro 660; 11:00-21:00; closed Sundays.",
+      "tags": ["restaurant"],
+      "places": [
+        {"name": "涯月鮭魚本店 (Aewol Salmon Main Store)", "category": "restaurant", "region": "aewol_hallim_west"}
+      ],
+      "notes": "Address and hours provided in post."
+    },
+    {
+      "index": 21,
+      "url": "https://www.threads.com/@mmei0106/post/DZkJTVWCZxJ",
+      "account": "mmei0106",
+      "platform": "threads",
+      "extraction_method": "text",
+      "post_text": "Jeju-limited tangerine yogurt drink sold cheaply at Jeju CU / 7-Eleven; has real fruit pulp. Also sold at airport / Seoul / Busan.",
+      "tags": ["itinerary"],
+      "places": [
+        {"name": "CU / 7-Eleven (convenience stores)", "category": "sightseeing", "region": "general"}
+      ],
+      "notes": "Shopping/snack tip; stock up at the airport before leaving."
+    },
+    {
+      "index": 22,
+      "url": "https://www.threads.com/@rur.uew/post/DZjbgBND9KU",
+      "account": "rur.uew",
+      "platform": "threads",
+      "extraction_method": "image_ocr",
+      "post_text": "Seoul/Busan/Jeju must-eat BBQ roundup, 11 images.",
+      "tags": ["restaurant"],
+      "places": [
+        {"name": "金豬食堂 Geumdwaeji Sikdang (Seoul)", "category": "restaurant", "region": "general"},
+        {"name": "王妃家 Wangbiga (Myeongdong, Seoul)", "category": "restaurant", "region": "general"}
+      ],
+      "notes": "Multi-city roundup; readable slides are Seoul (Hongdae/Myeongdong/Sinchon). Jeju-specific entries are on later carousel slides not reliably OCR'd."
+    }
+  ]
+}
