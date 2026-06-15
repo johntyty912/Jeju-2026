@@ -87,7 +87,7 @@ const panels = [
     note:{cls:"spa",text:"🛁 通宵機攰 + 15:00 先 check-in，中間去機場汗蒸幕沖涼/浸浴/瞓覺充電，最爽。"},
     items:[
       {time:"06:30",t:"落機 CJU，攞行李"},
-      {time:"上午",t:"용두암해수랜드 Yongduam Haesu Spa Land",d:"近機場~10分 · 海水浴+汗蒸幕+休息室。想高級啲：Jeju Dream Tower 찜질 Spa（06:00開）",kr:"용두암해수랜드"},
+      {time:"上午",t:"용두암해수랜드 Yongduam Haesu Spa Land",d:"近機場~10分 · 海水浴+汗蒸幕+休息室 · walk-in任入。⚠️ Dream Tower 찜질Spa只限Grand Hyatt住客，walk-in入唔到",kr:"용두암해수랜드"},
       {time:"中午後",t:"搭巴士600 → Seogwipo KAL Hotel",d:"機場5號閘口 · ₩5,000 · ~80分 · 終點站就係酒店"},
       {time:"15:00",t:"Check-in，寄行李"},
       {time:"黃昏",t:"天地淵瀑布（夜間點燈）/ 正房瀑布",d:"近酒店",kr:"천지연폭포"},
@@ -127,22 +127,24 @@ const panels = [
       {time:"午餐",t:"涯月鮭魚本店",d:"三文魚刺身 · 11:00–21:00 · 週日休",kr:"애월 연어"},
       {time:"黃昏",t:"挾才 / 涯月睇日落"}
     ]},
-  { id:"d6", tab:"Day 6", date:"6/25（四）", title:"西歸浦 機動 / 手信 / 休息", tags:["彈性"], transport:"步行",
-    note:{cls:"",text:"今晚瞓 KAL，準備聽日 check-out 帶住行李上濟州市。"},
+  { id:"d6", tab:"Day 6", date:"6/25（四）", title:"濟州市 / 北部 購物日（即日來回）", tags:["購物"], transport:"巴士600 / Kakao T",
+    note:{cls:"",text:"行李留 KAL，即日來回。尾班巴士600（機場約22:00後）或 Kakao T ~₩45,000 返西歸浦瞓。"},
     items:[
-      {time:"上午",t:"每日偶來市場 補手信",d:"柑橘朱古力/果醬/果凍/馬格利（買加工品，鮮果帶唔到）",kr:"서귀포매일올레시장"},
-      {time:"後備",t:"Zarolo Museum 光影展",d:"落雨後備，或重遊最鍾意景點 / 酒店泳池+spa",kr:"자롤로뮤지엄"},
-      {time:"晚上",t:"瞓 KAL，執行李"}
-    ]},
-  { id:"d7", tab:"Day 7", date:"6/26（五）", title:"濟州市購物 → 機場汗蒸幕過夜", tags:["購物","汗蒸幕"], transport:"巴士600 / Kakao T",
-    note:{cls:"spa",text:"🛁 朝早 check-out KAL 帶行李上濟州市；行李擺汗蒸幕/巴士總站儲物櫃，玩完返汗蒸幕瞓，朝早短程入機場——免凌晨由西歸浦搏命截長途車。"},
-    items:[
-      {time:"朝早",t:"KAL check-out → 巴士600/Kakao T 上濟州市"},
+      {time:"朝早",t:"巴士600 / Kakao T 上濟州市"},
       {time:"",t:"London Bagel Museum",d:"要排隊，一開門就去",kr:"런던베이글뮤지엄"},
       {time:"",t:"東門市場",d:"街頭小食 + 手信 · 07:00–21:00",kr:"동문재래시장"},
       {time:"下午",t:"新羅/樂天免稅店 + 步行街 + 龍頭岩",kr:"용두암"},
       {time:"晚餐",t:"만복흑돼지 黑豬肉",d:"#1 · 或 칠돈가",kr:"만복흑돼지"},
-      {time:"晚上",t:"용두암해수랜드（24小時）嘆汗蒸幕 + 過夜",d:"近機場~10分",kr:"용두암해수랜드"}
+      {time:"晚上",t:"返 KAL 瞓"}
+    ]},
+  { id:"d7", tab:"Day 7", date:"6/26（五）", title:"西歸浦 chill / 手信 → 夜晚北上瞓汗蒸幕", tags:["休息","汗蒸幕"], transport:"夜晚 巴士600 / Kakao T",
+    note:{cls:"spa",text:"🛁 房 booking 到 6/27，唔使趕 check-out：日頭用返 KAL 房 chill，黃昏帶行李上機場區汗蒸幕過夜，免凌晨由西歸浦截長途車。"},
+    items:[
+      {time:"日頭",t:"西歸浦 chill / 酒店泳池+spa",d:"房係你嘅，唔使趕走 / 重遊最鍾意景點"},
+      {time:"",t:"每日偶來市場 補手信",d:"柑橘朱古力/果醬/果凍/馬格利（買加工品）",kr:"서귀포매일올레시장"},
+      {time:"後備",t:"Zarolo Museum 光影展",d:"落雨後備",kr:"자롤로뮤지엄"},
+      {time:"黃昏",t:"帶行李 → 巴士600/Kakao T 上機場區"},
+      {time:"晚上",t:"용두암해수랜드（24h）嘆汗蒸幕 + 過夜",d:"近機場~10分 · 先電話確認可通宵 +82-64-742-7000",kr:"용두암해수랜드"}
     ]},
   { id:"d8", tab:"Day 8", date:"6/27（六）", title:"回程", tags:["回港"], transport:"短程Kakao T",
     items:[
