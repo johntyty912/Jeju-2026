@@ -94,11 +94,13 @@ const panels = [
       {time:"黃昏",t:"天地淵瀑布（夜間點燈）/ 正房瀑布",d:"近酒店",kr:"천지연폭포"},
       {time:"晚餐",t:"每日偶來市場 + 帶魚 네거리식당",kr:"네거리식당"}
     ]},
-  { id:"d2", tab:"Day 2", date:"6/21（日）", title:"西歸浦南岸 + 中文觀光區", tags:["步行/短程Kakao T"], transport:"短程Kakao T",
+  { id:"d2", tab:"Day 2", date:"6/21（日）", title:"西歸浦南岸 + 中文觀光區", tags:["步行/短程Kakao T","🎟️ All Pass 啟用"], transport:"短程Kakao T",
+    note:{cls:"",text:"🎟️ 48h All Pass 啟用日：下午第一個 pass 景點先拍卡，連續鐘數由此起跳（窗口 ~13:00 → Day4 ~13:00）。"},
     items:[
       {time:"上午",t:"柱狀節理帶 → 中文海水浴場",kr:"주상절리"},
       {time:"午餐",t:"색달식당 帶魚 / 刀魚湯",d:"中文區",kr:"색달식당"},
-      {time:"下午",t:"山茶花之丘 Camellia Hill",d:"或 泰迪熊博物館 / 小人國（任揀）· ~20分車",kr:"카멜리아힐"},
+      {time:"🎟️下午",t:"山茶花之丘 Camellia Hill",d:"pass 啟用 · 單買~HK$52 · 或泰迪熊/小人國任揀",kr:"카멜리아힐"},
+      {time:"🎟️",t:"O'Sulloc 茶博物館",d:"同安德面~10分車 · pass 換綠茶雪糕（由原Day4搬上嚟夾窗口）",kr:"오설록"},
       {time:"溫泉",t:"산방산탄산온천（可選）",d:"西南사계 · 碳酸溫泉+山房山景 · ~30分車 · 06:00–22:00 · 成人₩14,000 · 同汗蒸幕唔同feel",kr:"산방산탄산온천"},
       {time:"黃昏",t:"獨立岩睇日落",kr:"외돌개"},
       {time:"晚餐",t:"호정이네 帶魚 / 국수바다 麵",kr:"호정이네"}
@@ -112,13 +114,12 @@ const panels = [
       {time:"",t:"萬丈窟 Manjanggul",d:"UNESCO熔岩洞，入面涼",kr:"만장굴"},
       {time:"黃昏前",t:"月汀里海邊 cafe",kr:"월정리"}
     ]},
-  { id:"d4", tab:"Day 4", date:"6/23（二）", title:"中部 — 漢拿山 或 茶+火山口", tags:["二選一"], transport:"巴士281/240 + Kakao T",
-    note:{cls:"",text:"週二好多市場/食肆休（東門市場週二休）。中部班次疏，預早 Naver 查巴士。"},
+  { id:"d4", tab:"Day 4", date:"6/23（二）", title:"中部 — 漢拿山 或 茶+火山口", tags:["二選一","🎟️ All Pass 收尾"], transport:"巴士281/240 + Kakao T",
+    note:{cls:"",text:"🎟️ 48h pass 約 13:00 到期 → 朝天堆景點排上午用晒。週二好多市場/食肆休（東門市場週二休）。中部班次疏，預早 Naver 查巴士。"},
     items:[
-      {time:"方案A",t:"漢拿山行山",d:"城板岳線巴士281 / 觀音寺線 · 需網上預約、極早出發、時間管制嚴",kr:"한라산"},
-      {time:"方案B",t:"O'Sulloc 茶博物館",d:"抹茶",kr:"오설록"},
-      {time:"",t:"山君不離 火山口",kr:"산굼부리"},
-      {time:"",t:"Eco Land 森林小火車",kr:"에코랜드"}
+      {time:"🎟️方案B",t:"山君不離 火山口",d:"上午先去，趁pass未過期",kr:"산굼부리"},
+      {time:"🎟️",t:"Eco Land 森林小火車",d:"同朝天面 · pass涵蓋 · 中午前掃晒",kr:"에코랜드"},
+      {time:"方案A",t:"漢拿山行山（揀此用唔到pass）",d:"城板岳線巴士281 / 觀音寺線 · 需網上預約、極早出發、時間管制嚴",kr:"한라산"}
     ]},
   { id:"d5", tab:"Day 5", date:"6/24（三）", title:"西部", tags:["沿岸巴士202 + Kakao T"], transport:"沿岸巴士202 + Kakao T",
     note:{cls:"",text:"西岸沿岸巴士202班次密，做骨幹好可靠，Kakao T 補最後一程。"},
@@ -209,7 +210,8 @@ const BOOKING = `
 <tr><td>漢拿山登頂<br>（Day4 方案A）</td><td>官網 <b>visithalla.jeju.go.kr</b> 預約（免費・QR 入閘）</td><td>城板岳1000/觀音寺500 人/日，月頭開放下月、極搶。制度間中有變，去前再確認。唔行山就跳過</td></tr>
 <tr><td>熱門餐廳<br>（夢炭等）</td><td><b>CatchTable</b> App 早訂</td><td>London Bagel / 黑豬肉多數靠排隊，唔接訂位</td></tr>
 <tr><td>산방산탄산온천<br>（Day2 可選）</td><td>現場買，或 WAUG/Klook 平少少</td><td>成人 ₩14,000・walk-in OK</td></tr>
-<tr><td>景點門票<br>（泰迪熊/翰林公園/<br>Camellia Hill/Eco Land/Zarolo）</td><td>Klook/KKday/WAUG/Trazy 電子票</td><td>平少少又免排隊；現場一樣買到</td></tr>
+<tr><td>🎟️ <b>濟州 All Pass</b><br>（48h・HK$145）</td><td>Klook activity <b>195642</b></td><td><b>已決定買 48h</b>。計連續鐘數，Day2 下午第一個景點先拍卡，窗口 ~13:00 → Day4 ~13:00。窗口內掃 Camellia Hill＋O'Sulloc（Day2）＋산굼부리＋Eco Land（Day4 上午）＝抵過 $145。每景點限入一次、營運商間隔1鐘。落單揀使用日 6/21，核實「計鐘」非「限當日」</td></tr>
+<tr><td>景點門票<br>（泰迪熊/翰林公園/Zarolo<br>＝pass 窗口外）</td><td>Klook/KKday/WAUG/Trazy 電子票</td><td>翰林公園 Day5 喺 pass 窗口外，單買或現場；其餘 pass cover 唔到嘅散買</td></tr>
 <tr><td>牛島渡輪<br>（Day3 可選）</td><td>城山港現場買，<b>帶護照</b></td><td>唔使預約，班次密</td></tr>
 <tr><td>汗蒸幕<br>（용두암/도두해수파크）</td><td>walk-in，唔使訂</td><td>最後一晚去 도두 前打 <b>064-711-1000</b> 確認通宵 수면실</td></tr>
 </table>
