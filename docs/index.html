@@ -60,6 +60,24 @@
   ul.tips{padding-left:18px;font-size:.85rem}
   ul.tips li{margin-bottom:7px}
   footer{text-align:center;font-size:.72rem;color:var(--muted);margin-top:24px;padding:0 16px}
+  .ckgrp{background:#fff;border-radius:16px;box-shadow:var(--shadow);padding:4px 4px;margin-bottom:14px}
+  .ckhead{font-weight:700;font-size:.92rem;padding:10px 12px 4px;color:var(--accent)}
+  .cksub{font-size:.76rem;color:var(--muted);padding:0 12px 6px}
+  .ck{display:flex;gap:11px;align-items:flex-start;padding:10px 12px;border-bottom:1px solid var(--line);cursor:pointer;user-select:none}
+  .ck:last-child{border-bottom:none}
+  .ck .box{width:20px;height:20px;border:2px solid var(--accent);border-radius:6px;flex:none;margin-top:1px;
+           display:flex;align-items:center;justify-content:center;font-size:.8rem;color:#fff;transition:.15s}
+  .ck.done .box{background:var(--accent)}
+  .ck.done .box::after{content:"✓"}
+  .ck .lbl{font-size:.88rem}
+  .ck.done .lbl{color:var(--muted);text-decoration:line-through}
+  .ck .lbl b{color:var(--accent2)}
+  .ckbar{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
+  .ckbar .prog{flex:1;height:8px;background:#fdeee2;border-radius:8px;overflow:hidden}
+  .ckbar .prog>i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
+  .ckbar .pct{font-size:.78rem;color:var(--muted);font-weight:600;min-width:74px;text-align:right}
+  .ckreset{display:inline-block;font-size:.74rem;color:var(--muted);border:1px solid var(--line);
+           border-radius:8px;padding:3px 9px;cursor:pointer;margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -83,6 +101,7 @@ const NAVER = q => "https://map.naver.com/v5/search/" + encodeURIComponent(q);
 
 const panels = [
   { id:"transport", tab:"🚗 交通", custom:"transport" },
+  { id:"checklist", tab:"✅ Checklist", custom:"checklist" },
   { id:"booking", tab:"📋 預約", custom:"booking" },
   { id:"d1", tab:"Day 1", date:"6/20（六）", title:"抵達 → 機場汗蒸幕 → 西歸浦", tags:["輕鬆","汗蒸幕"], transport:"巴士600 → KAL",
     note:{cls:"spa",text:"🛁 通宵機攰 + 15:00 先 check-in，中間去機場汗蒸幕沖涼/浸浴/瞓覺充電，最爽。"},
@@ -230,6 +249,64 @@ const BOOKING = `
 <li><b>CatchTable / Naver 예약</b>：餐廳訂位。</li>
 </ul>`;
 
+const CK_DATA = [
+  { head:"✅ To-Do（出發前逐格剔）", sub:"", items:[
+    "填 <b>e-Arrival Card</b>（抵韓前3日內＝6/17–6/19）→ e-arrivalcard.go.kr，填完截圖",
+    "確認護照有效期 <b>6個月以上</b>",
+    "裝好 App：Kakao T / Naver Map / Papago / CatchTable",
+    "Kakao T 綁海外信用卡（試吓叫到車先）",
+    "CatchTable 早訂熱門餐廳（夢炭等黑豬肉）",
+    "漢拿山揀方案A先要：visithalla.jeju.go.kr 月頭搶預約（唔行山跳過）",
+    "截圖/離線存：機票・酒店・All Pass・汗蒸幕 064-711-1000",
+    "換/備定現金韓圜（的士・市場・汗蒸幕用）",
+    "打包：汗蒸幕隨身衫・尿袋・轉換插蘇・薄外套（洞窟/冷氣涼）"
+  ]},
+  { head:"🛒 To-Buy — 出發前網上買", sub:"", items:[
+    "🎟️ <b>濟州 All Pass 48h・HK$145</b>（Klook 195642，使用日揀6/21，核實「計鐘」）",
+    "<b>eSIM / 上網卡</b> 5G（Klook/KKday，約 HK$30–60/週）",
+    "翰林公園門票（Day5・pass窗口外，可單買）",
+    "산방산탄산온천（Day2 可選，WAUG/Klook 平少少）"
+  ]},
+  { head:"🛒 To-Buy — 落機機場買", sub:"", items:[
+    "<b>WOWPASS</b>（入韓圜＝T-money＋退稅，推介）或 T-money 卡 ~₩3,000"
+  ]},
+  { head:"🛍️ 手信（買加工品，鮮果帶唔到）", sub:"邊度買：東門市場 / 每日偶來市場 / 免稅店 / 機場（單張滿₩15,000可退稅）", items:[
+    "柑橘朱古力 / 果醬 / 果凍",
+    "漢拿峰零食",
+    "馬格利",
+    "O'Sulloc 綠茶"
+  ]}
+];
+
+const CK_KEY = "jeju2026-checklist";
+function ckLoad(){ try{ return JSON.parse(localStorage.getItem(CK_KEY))||{}; }catch(e){ return {}; } }
+function ckSave(s){ try{ localStorage.setItem(CK_KEY, JSON.stringify(s)); }catch(e){} }
+function buildChecklist(){
+  const state = ckLoad();
+  let h = `<div class="ckbar"><div class="prog"><i id="ckfill"></i></div><span class="pct" id="ckpct">0%</span></div>`;
+  h += `<span class="ckreset" id="ckreset">↺ 全部重設</span>`;
+  let idx=0;
+  CK_DATA.forEach(g=>{
+    h += `<div class="ckgrp"><div class="ckhead">${g.head}</div>`;
+    if(g.sub) h += `<div class="cksub">${g.sub}</div>`;
+    g.items.forEach(it=>{
+      const id="ck"+idx; const done=state[id]?" done":"";
+      h += `<div class="ck${done}" data-id="${id}"><span class="box"></span><span class="lbl">${it}</span></div>`;
+      idx++;
+    });
+    h += `</div>`;
+  });
+  return h;
+}
+function ckUpdateProgress(){
+  const all=document.querySelectorAll(".ck");
+  const done=document.querySelectorAll(".ck.done").length;
+  const pct=all.length?Math.round(done/all.length*100):0;
+  const fill=document.getElementById("ckfill"), pc=document.getElementById("ckpct");
+  if(fill) fill.style.width=pct+"%";
+  if(pc) pc.textContent=done+"/"+all.length+" · "+pct+"%";
+}
+
 const nav = document.getElementById("nav");
 const main = document.getElementById("main");
 
@@ -243,6 +320,7 @@ panels.forEach((p,i)=>{
   const panel = document.createElement("section");
   panel.className = "panel" + (i===0?" active":"");
   if(p.custom==="transport"){ panel.innerHTML = TRANSPORT; }
+  else if(p.custom==="checklist"){ panel.innerHTML = buildChecklist(); }
   else if(p.custom==="booking"){ panel.innerHTML = BOOKING; }
   else {
     let h = `<div class="dayhead"><span class="daynum">${p.tab}</span>
@@ -270,6 +348,23 @@ function select(i){
   document.querySelectorAll(".tab")[i].scrollIntoView({inline:"center",block:"nearest",behavior:"smooth"});
   window.scrollTo({top:0,behavior:"smooth"});
 }
+
+// 勾選清單：㩒一下 toggle，存喺 localStorage
+main.addEventListener("click", e=>{
+  const row = e.target.closest(".ck");
+  if(row){
+    row.classList.toggle("done");
+    const s=ckLoad(); const id=row.dataset.id;
+    if(row.classList.contains("done")) s[id]=1; else delete s[id];
+    ckSave(s); ckUpdateProgress(); return;
+  }
+  if(e.target.id==="ckreset"){
+    ckSave({});
+    document.querySelectorAll(".ck.done").forEach(r=>r.classList.remove("done"));
+    ckUpdateProgress();
+  }
+});
+ckUpdateProgress();
 </script>
 </body>
 </html>
