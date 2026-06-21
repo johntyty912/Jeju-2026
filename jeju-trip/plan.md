@@ -55,11 +55,11 @@ Jeju is an oval. Plan by side to avoid backtracking — Jeju City ↔ Seogwipo i
 - 山茶花之丘 Camellia Hill · 泰迪熊博物館 Teddy Bear Museum · 小人國 Soinguk Theme Park [7]
 - 西歸浦每日偶來市場 Seogwipo Maeil Olle Market — tangerine products, souvenirs [3][7][19]
 
-**Eat — cutlassfish (西歸浦名產)**
-- 호정이네 Hojeongine (local favorite) [3]
-- 색달식당 Saekdal Sikdang (near Jungmun) [3]
-- 네거리식당 Negeori Sikdang (by Olle Market) [3]
+**Eat — 非帶魚之選 (no cutlassfish)**
+- 수두리보말칼국수 Suduri Bomal Kalguksu (海螺/海膽刀切麵, 중앙로터리) [3]
 - 국수바다 Guksubada (noodles) [3]
+- 천짓골 Cheonjitgol (黑豬肉 두루치기, Seogwipo) [3]
+- 中文區 전복돌솥밥 abalone hotpot / 黑豬肉 (Jungmun) [3]
 
 **Stay**
 - Parnas Hotel Jeju (long infinity pool) · Shilla Jeju · JW Marriott Jeju [3]
