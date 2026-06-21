@@ -101,12 +101,14 @@ const NAVER = q => "https://map.naver.com/v5/search/" + encodeURIComponent(q);
 
 const panels = [
   { id:"transport", tab:"🚗 交通", custom:"transport" },
+  { id:"food", tab:"🍜 美食", custom:"food" },
   { id:"checklist", tab:"✅ Checklist", custom:"checklist" },
   { id:"booking", tab:"📋 預約", custom:"booking" },
   { id:"d1", tab:"Day 1", date:"6/20（六）", title:"抵達 → 機場汗蒸幕 → 西歸浦", tags:["輕鬆","汗蒸幕"], transport:"巴士600 → KAL",
     note:{cls:"spa",text:"🛁 通宵機攰 + 15:00 先 check-in，中間去機場汗蒸幕沖涼/浸浴/瞓覺充電，最爽。"},
     items:[
       {time:"06:30",t:"落機 CJU，攞行李"},
+      {time:"🌅早餐",t:"機場/용두암 해장국 或 便利店墊肚",d:"通宵機先輕食 · 想正餐去 우진해장국類 醒酒湯暖胃（Naver 查就近開門）",kr:"우진해장국"},
       {time:"上午",t:"용두암해수랜드 Yongduam Haesu Spa Land",d:"近機場~10分 · 海水浴+汗蒸幕+休息室 · walk-in任入。⚠️ Dream Tower 찜질Spa只限Grand Hyatt住客，walk-in入唔到",kr:"용두암해수랜드"},
       {time:"中午後",t:"搭巴士600 → Seogwipo KAL Hotel",d:"機場5號閘口 · ₩5,000 · ~80分 · 終點站就係酒店"},
       {time:"15:00",t:"Check-in，寄行李"},
@@ -116,6 +118,7 @@ const panels = [
   { id:"d2", tab:"Day 2", date:"6/21（日）", title:"西歸浦南岸 + 中文觀光區", tags:["步行/短程Kakao T","🎟️ All Pass 啟用"], transport:"短程Kakao T",
     note:{cls:"",text:"🎟️ 48h All Pass 啟用日：下午第一個 pass 景點先拍卡，連續鐘數由此起跳（窗口 ~13:00 → Day4 ~13:00）。"},
     items:[
+      {time:"🌅早餐",t:"서귀포 매일올레시장 早點 / 西歸浦 cafe",d:"市場紫菜飯捲/煎餅/橘子汁墊肚，再出中文區",kr:"서귀포매일올레시장"},
       {time:"上午",t:"柱狀節理帶 → 中文海水浴場",kr:"주상절리"},
       {time:"午餐",t:"색달식당 帶魚 / 刀魚湯",d:"中文區",kr:"색달식당"},
       {time:"🎟️下午",t:"山茶花之丘 Camellia Hill",d:"pass 啟用 · 單買~HK$52 · 或泰迪熊/小人國任揀",kr:"카멜리아힐"},
@@ -127,6 +130,7 @@ const panels = [
   { id:"d3", tab:"Day 3", date:"6/22（一）", title:"牛島一日遊", tags:["城山港渡輪","帶護照"], transport:"巴士201/101 + 城山港渡輪",
     note:{cls:"warn",text:"⚠️ 牛島：城山港搭船~15分，買船票要帶護照、班次密唔使預約。尾船約 17:00–18:00 收（季節有變，去到睇返班次表），唔好玩到太夜。放棄咗萬丈窟+月汀里（東部太遠塞唔入同一日）。"},
     items:[
+      {time:"🌅早餐",t:"便利店墊肚 → 城山 전복죽 鮑魚粥",d:"天未光出發 · 落山後城山食粥暖胃，或牛島 cafe 當早午餐",kr:"성산 전복죽"},
       {time:"一早",t:"城山日出峰",d:"早去人少",kr:"성산일출봉"},
       {time:"上午",t:"城山港 → 搭渡輪去牛島",d:"班次密・唔使預約・帶護照",kr:"성산항"},
       {time:"牛島",t:"租電動單車/電瓶車環島",d:"白沙灘 하고수동/검멜레 · 海景cafe 블랑로쉐/UDORO 93/우도왕자이야기 · 지미스 花生雪糕 · 牛島漢堡",kr:"우도"},
@@ -134,35 +138,43 @@ const panels = [
       {time:"夠時間",t:"涉地可支 Seopjikoji",d:"城山旁，順手去",kr:"섭지코지"},
       {time:"黃昏",t:"搭尾船返城山港 → Kakao T/巴士返西歸浦"}
     ]},
-  { id:"d4", tab:"Day 4", date:"6/23（二）", title:"中部 — 漢拿山 或 茶+火山口", tags:["二選一","🎟️ All Pass 收尾"], transport:"巴士281/240 + Kakao T",
-    note:{cls:"",text:"🎟️ 48h pass 約 13:00 到期 → 朝天堆景點排上午用晒。週二好多市場/食肆休（東門市場週二休）。中部班次疏，預早 Naver 查巴士。"},
+  { id:"d4", tab:"Day 4", date:"6/23（二）", title:"中部火山口（已定唔行山・補餐日）", tags:["方案B","🎟️ All Pass 收尾"], transport:"巴士 + Kakao T",
+    note:{cls:"warn",text:"🎟️ 48h pass 約 13:00 到期 → 朝天面景點排上午用晒。⚠️ 週二好多市場/食肆休（東門市場週二休）；中部班次疏，去前 Naver 查巴士＋餐廳營業。已決定唔行山，下午有 buffer 補餐 / 東北角。"},
     items:[
-      {time:"🎟️方案B",t:"山君不離 火山口",d:"上午先去，趁pass未過期",kr:"산굼부리"},
+      {time:"🌅早餐",t:"西歸浦食飽先上中部",d:"週二中部多店休 · 市場/麵包店食飽，或便利店買定 김밥 上車食"},
+      {time:"🎟️上午",t:"山君不離 火山口",d:"先去，趁pass未過期",kr:"산굼부리"},
       {time:"🎟️",t:"Eco Land 森林小火車",d:"同朝天面 · pass涵蓋 · 中午前掃晒",kr:"에코랜드"},
-      {time:"方案A",t:"漢拿山行山（揀此用唔到pass）",d:"城板岳線巴士281 / 觀音寺線 · 需網上預約、極早出發、時間管制嚴",kr:"한라산"}
+      {time:"🍽️午餐",t:"一品豆腐（醬油蟹）/ 海女飯捲",d:"中部選擇疏 · Naver 確認週二開門",kr:"제주 순두부"},
+      {time:"☕下午",t:"Blue Bottle / orrrn 오른 cafe",d:"pass用完唔趕 · 東部구좌一帶 chill",kr:"블루보틀 제주"},
+      {time:"可加",t:"月汀里 cafe街 / 萬丈窟",d:"原本放棄嘅東北角，今日有 buffer 可補一個",kr:"월정리"},
+      {time:"🍖晚餐",t:"漢拿山炒飯 / 三代麵條會館",d:"補返之前未排到 · 返西歸浦路上或市區",kr:"한라산볶음밥"}
     ]},
   { id:"d5", tab:"Day 5", date:"6/24（三）", title:"西部", tags:["沿岸巴士202 + Kakao T"], transport:"沿岸巴士202 + Kakao T",
     note:{cls:"",text:"西岸沿岸巴士202班次密，做骨幹好可靠，Kakao T 補最後一程。"},
     items:[
+      {time:"🌅早餐",t:"오드랑 베이커리",d:"蒜蓉爆漿法包，早去賣完即止",kr:"오드랑베이커리"},
       {time:"上午",t:"涯月咖啡一條街 + 涯月海岸",d:"海景cafe密度最高",kr:"애월 카페거리"},
       {time:"",t:"挾才海水浴場 + 翰林公園",kr:"협재해변"},
-      {time:"",t:"오드랑 베이커리",d:"蒜蓉爆漿法包，早去賣完即止",kr:"오드랑베이커리"},
-      {time:"午餐",t:"涯月鮭魚本店",d:"三文魚刺身 · 11:00–21:00 · 週日休",kr:"애월 연어"},
+      {time:"午餐",t:"涯月鮭魚本店",d:"三文魚刺身 · 11:00–21:00 · 週六去啱（⚠️週日休）· 或 海鮮拉麵 Noraba 노라바",kr:"애월 연어"},
+      {time:"☕",t:"가르송티미드 Garçon Timide",d:"翰林一帶 cafe 落腳",kr:"가르송티미드"},
       {time:"黃昏",t:"挾才 / 涯月睇日落"}
     ]},
   { id:"d6", tab:"Day 6", date:"6/25（四）", title:"濟州市 / 北部 購物日（即日來回）", tags:["購物"], transport:"巴士600 / Kakao T",
     note:{cls:"",text:"行李留 KAL，即日來回。尾班巴士600（機場約22:00後）或 Kakao T ~₩45,000 返西歸浦瞓。"},
     items:[
       {time:"朝早",t:"巴士600 / Kakao T 上濟州市"},
-      {time:"",t:"London Bagel Museum",d:"要排隊，一開門就去",kr:"런던베이글뮤지엄"},
+      {time:"🌅早餐",t:"우진해장국 醒酒湯",d:"市區名物・早開暖胃，之後再去排 bagel",kr:"우진해장국"},
+      {time:"",t:"London Bagel Museum",d:"要排隊，一開門就去（可當早午餐）",kr:"런던베이글뮤지엄"},
+      {time:"🍜午餐",t:"자매국수 / 올래국수 豬肉麵",d:"市區/機場一帶 · CatchTable",kr:"자매국수"},
       {time:"",t:"東門市場",d:"街頭小食 + 手信 · 07:00–21:00",kr:"동문재래시장"},
       {time:"下午",t:"新羅/樂天免稅店 + 步行街 + 龍頭岩",kr:"용두암"},
-      {time:"晚餐",t:"만복흑돼지 黑豬肉",d:"#1 · 或 칠돈가",kr:"만복흑돼지"},
+      {time:"晚餐",t:"만복흑돼지 黑豬肉",d:"#1 · 或 칠돈가 · 想試海膽加 Unidam 우니담",kr:"만복흑돼지"},
       {time:"晚上",t:"返 KAL 瞓"}
     ]},
   { id:"d7", tab:"Day 7", date:"6/26（五）", title:"西歸浦 chill / 手信 → 夜晚北上瞓汗蒸幕", tags:["休息","汗蒸幕"], transport:"夜晚 巴士600 / Kakao T",
     note:{cls:"spa",text:"🛁 房 booking 到 6/27，唔使趕 check-out：日頭用返 KAL 房 chill，黃昏帶行李上機場區汗蒸幕過夜，免凌晨由西歸浦截長途車。"},
     items:[
+      {time:"🌅早餐",t:"서귀포 매일올레시장 / brunch cafe",d:"今日唔趕路，慢慢嘆",kr:"서귀포매일올레시장"},
       {time:"日頭",t:"西歸浦 chill / 酒店泳池+spa",d:"房係你嘅，唔使趕走 / 重遊最鍾意景點"},
       {time:"",t:"每日偶來市場 補手信",d:"柑橘朱古力/果醬/果凍/馬格利（買加工品）",kr:"서귀포매일올레시장"},
       {time:"後備",t:"Zarolo Museum 光影展",d:"落雨後備",kr:"자롤로뮤지엄"},
@@ -172,10 +184,48 @@ const panels = [
   { id:"d8", tab:"Day 8", date:"6/27（六）", title:"回程", tags:["回港"], transport:"短程Kakao T",
     items:[
       {time:"~05:30",t:"汗蒸幕醒 → 短程入機場",d:"Kakao T/的士 ~10–15分"},
+      {time:"🌅早餐",t:"汗蒸幕飲品/蛋 或 機場墊肚",d:"太早冇正餐 · 過關後再買咖啡/麵包"},
       {time:"",t:"國際線 check-in",d:"HK Express 建議起飛前90分到"},
       {time:"07:30",t:"UO699 → 香港",d:"09:40 抵港"}
     ]}
 ];
+
+const FOOD = `
+<h3 class="sec">📍 景點 × 附近美食（順遊唔使捱餓）</h3>
+<p style="font-size:.82rem;color:#555;margin:0 0 10px">每個景點配就近食肆，遊完即食唔使兜路。⚠️ 距離大概，營業時間/週休 Naver 查。</p>
+<table>
+<tr><th>景點</th><th>附近食乜</th></tr>
+<tr><td>🟦 용두암 龍頭岩</td><td>黑豬肉&海鮮街 · 돌담흑돼지機場店 · 海女烤肉(연동海膽)</td></tr>
+<tr><td>🟦 東門市場</td><td>市場小食(黑豬串/煎餅/橘子汁) · 만복/칠돈가 黑豬肉</td></tr>
+<tr><td>🟦 免稅街 / 步行街</td><td>자매국수 / 올래국수 豬肉麵 · Unidam 海膽</td></tr>
+<tr><td>🟦 London Bagel</td><td>本身蜜糖牛油 bagel · 近市區 우진해장국</td></tr>
+<tr><td>🟩 天地淵 / 正房瀑布</td><td>偶來市場：네거리식당 帶魚 · 국수바다 麵</td></tr>
+<tr><td>🟩 柱狀節理 / 中文海灘</td><td>색달식당 帶魚 / 刀魚湯(中文區)</td></tr>
+<tr><td>🟩 獨立岩 외돌개</td><td>호정이네 帶魚 · 偶來市場一帶</td></tr>
+<tr><td>🟩 Camellia Hill / O'Sulloc</td><td>O'Sulloc 園內綠茶雪糕 / 抹茶甜品(pass換)</td></tr>
+<tr><td>🟧 城山 / 牛島港 / 涉地可支</td><td>명진전복 / 한라전복 鮑魚 · 城山 전복죽</td></tr>
+<tr><td>🟧 牛島 우도</td><td>지미스 花生雪糕 · 牛島漢堡 · 海景cafe 블랑로쉐/UDORO 93</td></tr>
+<tr><td>🟫 산굼부리 / Eco Land</td><td>一品豆腐(醬油蟹) · 海女飯捲 · 漢拿山炒飯 · Blue Bottle/orrrn</td></tr>
+<tr><td>🟫 月汀里 / 萬丈窟(如加)</td><td>月汀里海邊cafe街 · 海女飯捲 · 김녕一帶</td></tr>
+<tr><td>🟨 涯月海岸 / 咖啡街</td><td>涯月咖啡街 · 涯月鮭魚 三文魚 · 海鮮拉麵 Noraba</td></tr>
+<tr><td>🟨 挾才 / 翰林公園</td><td>오드랑 베이커리 蒜蓉法包 · 가르송티미드 cafe</td></tr>
+</table>
+
+<h3 class="sec">🍽️ 加餐候補（想食多啲・按區）</h3>
+<table>
+<tr><th>區</th><th>餐廳</th><th>夾邊日</th></tr>
+<tr><td>中部</td><td>一品豆腐 / 海女飯捲</td><td>Day4 午</td></tr>
+<tr><td>中部</td><td>漢拿山炒飯 / 三代麵條</td><td>Day4 晚</td></tr>
+<tr><td>東部</td><td>한라전복(城山)</td><td>Day3 備</td></tr>
+<tr><td>西部</td><td>海鮮拉麵 Noraba</td><td>Day5 午</td></tr>
+<tr><td>西部</td><td>가르송티미드 cafe</td><td>Day5</td></tr>
+<tr><td>北部</td><td>자매국수 / 올래국수 麵</td><td>Day6 午</td></tr>
+<tr><td>北部</td><td>Unidam 海膽 / 海女烤肉</td><td>Day6</td></tr>
+<tr><td>北部</td><td>돌담흑돼지 機場店</td><td>Day1/8</td></tr>
+<tr><td>☕多區</td><td>Blue Bottle / orrrn / 橘子舒芙蕾</td><td>機動</td></tr>
+</table>
+<div class="note warn">❌ <b>一人唔建議</b>：夢炭 우대갈비唔接1人、熟成道/月高家等 BBQ 大份店 — 叫2人份貴又食唔晒，改食黑豬肉 만복/칠돈가。</div>
+<div class="note">🌅 <b>早餐通則</b>：韓國餐廳多數 10–11 點先開，可靠早餐＝해장국(醒酒湯) / 麵包店 / 市場小食 / 便利店 김밥。每日早餐已排入各 Day。</div>`;
 
 const TRANSPORT = `
 <h3 class="sec">🚗 一人・唔包車・Kakao T + 巴士 → 得！</h3>
@@ -335,6 +385,7 @@ panels.forEach((p,i)=>{
   const panel = document.createElement("section");
   panel.className = "panel" + (i===0?" active":"");
   if(p.custom==="transport"){ panel.innerHTML = TRANSPORT; }
+  else if(p.custom==="food"){ panel.innerHTML = FOOD; }
   else if(p.custom==="checklist"){ panel.innerHTML = buildChecklist(); }
   else if(p.custom==="booking"){ panel.innerHTML = BOOKING; }
   else {
