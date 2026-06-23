@@ -104,6 +104,7 @@ const panels = [
   { id:"food", tab:"🍜 美食", custom:"food" },
   { id:"checklist", tab:"✅ Checklist", custom:"checklist" },
   { id:"booking", tab:"📋 預約", custom:"booking" },
+  { id:"allpass", tab:"🎟️ All Pass", custom:"allpass" },
   { id:"d1", tab:"Day 1", date:"6/20（六）", title:"抵達 → 機場汗蒸幕 → 西歸浦", tags:["輕鬆","汗蒸幕"], transport:"巴士600 → KAL",
     note:{cls:"spa",text:"🛁 通宵機攰 + 15:00 先 check-in，中間去機場汗蒸幕沖涼/浸浴/瞓覺充電，最爽。"},
     items:[
@@ -308,6 +309,129 @@ const BOOKING = `
 <li><b>CatchTable / Naver 예약</b>：餐廳訂位。</li>
 </ul>`;
 
+// 🎟️ All Pass 優惠清單（來源 ticket.wokard.com・WOKA×VPASS）
+// [編號, 商家, 類型, 優惠, 距離km, q(Naver搜尋名,可省), use(行程用咗喺邊)]
+const AP_DATA = [
+  [1,"피커스제주","免費","美式咖啡 or Haribo軟糖 二選一",2.9],
+  [2,"바이제주","免費","手鏡",3.1],
+  [3,"제주육대표","折扣","每人 3,000韓元折扣券",3.9],
+  [4,"플랜트827","免費","美式咖啡 or 柑橘汁",5.6],
+  [5,"에오마르","免費","美式咖啡",5.9],
+  [6,"이상한 선물가게 앨리스","免費","玄武岩牙刷座",6.3],
+  [7,"어바웃제주","免費","磁石",6.9],
+  [8,"제주촐왓","免費","美式咖啡/漢拿峰軟糖/巧克力脆條/뿌셔뿌셔/柑橘軟糖 五選一",7.4],
+  [9,"외도339","免費","Coyota 1個",9.3],
+  [10,"제주홀릭뮤지엄","折扣","入場券",9.6],
+  [11,"노루생태관찰원","免費","入場券",10.7],
+  [12,"제주기와","免費","美式咖啡 or 冰茶 二選一",11.2],
+  [13,"글로시말차（僅限外帶）","免費","抹茶 or 美式咖啡",11.3,"글로시말차"],
+  [14,"브리프 애월","免費","美式咖啡/冰茶/徽章2種 三選一",11.7],
+  [15,"제주피싱테마파크(낚고락고)","折扣","釣魚體驗(60分鐘)",12.2],
+  [16,"아이바가든","免費","利用券",12.5],
+  [17,"에코랜드","折扣","入場券（金額名單冇寫·估省~₩14,000）",13.7,"","Day4"],
+  [18,"누리프렌즈","免費","鹽麵包",13.8],
+  [19,"라라카페","免費","美式咖啡",15.2],
+  [20,"센트럴파크","免費","入場券",15.2],
+  [21,"이너리스","折扣","成人18,000→Pass付5,000(省13,000)",15.9],
+  [22,"제주 라프","折扣","滑索 成人35,000→15,000(省20,000)·兒童17,000→9,000",16.4],
+  [23,"제주 라프 火山松茸足浴體驗","免費","療癒火山松茸足部護理",16.4,"제주 라프"],
+  [24,"한울제주","免費","오메기떡 2個(口味隨機)",17.1],
+  [25,"냥다방","免費","美式咖啡1杯 + 塔羅抽1張",18.0],
+  [26,"애월 갈치 암행어사","折扣","每人 4,000韓元折扣券",19.9],
+  [27,"난달카페","免費","美式咖啡 or 冰茶 二選一",19.9],
+  [28,"스카이워터쇼","折扣","演出觀賞券",21.4],
+  [29,"제제하우스","免費","原木項鍊體驗 or 領取1個",23.1],
+  [30,"델문도 김녕점","免費","美式咖啡(成人)/冰茶(兒童)",23.1],
+  [31,"헌마공신 김만일기념관","免費","入場券",23.4],
+  [32,"아이올레인포레스트","折扣","入場券",23.9],
+  [33,"목장카페 밭디","免費","美式咖啡 or 冰茶",24.6],
+  [34,"메이즈랜드","折扣","入場券",25.1],
+  [35,"다이나믹메이즈","折扣","Boost Up + Level2",26.0],
+  [36,"열대과일농장 유진팡","折扣","熱帶農場生態體驗",26.4],
+  [37,"북앤토이뮤지엄","折扣","餵馬體驗 or 棉花糖製作體驗 二選一",26.5],
+  [38,"노란집 매일올레시장점","免費","隨機護手霜",27.9,"","Day1/7"],
+  [39,"만달","免費","兔子紅蘿蔔筆 1個",28.5],
+  [40,"오또도넛 서귀점","免費","原味甜甜圈",28.6,"","Day4近西歸浦"],
+  [41,"제주향농원","免費","高糖度漢拿峰500g / 芒果軟糖 / 漢拿峰軟糖",28.6],
+  [42,"오또도넛 중문점","免費","原味甜甜圈",28.8,"","Day4中文"],
+  [43,"위랜드카트장","折扣","卡丁車利用券",28.8],
+  [44,"파더스가든","折扣","入場 + 動物農場",28.9],
+  [45,"우리승마장","免費","基本路線利用券",28.9],
+  [46,"피규어뮤지엄제주","折扣","入場券",29.2],
+  [47,"제스토리","免費","便條紙 + 鉛筆套裝",29.3],
+  [48,"런닝맨","折扣","60分鐘 or 90分鐘利用券",29.5],
+  [49,"감귤카트","折扣","卡丁車利用券",29.5],
+  [50,"제주실탄사격장","折扣","實彈射擊12發",29.5],
+  [51,"뷰제주하늘ATV","折扣","濟州越野路線",29.6],
+  [52,"모모쥬동물원","折扣","2小時利用券",29.9],
+  [53,"신화테마파크","免費+折扣","入場 + 單次設施(遊樂設施1次)",29.9,"","Day4順手"],
+  [54,"크리스마스박물관","免費","燈 or 手環製作 二選一",29.9],
+  [55,"초콜릿랜드","免費","利用券",29.9],
+  [56,"내노키카페","免費","美式咖啡/雪糕/手工甜點 三選一",29.9],
+  [57,"롯데호텔 제주 라세느 뷔페","折扣","20% 折扣券（成人晚餐₩165,000→~₩132,000）",30.1],
+  [58,"아프리카박물관","免費","入場券",30.4],
+  [59,"액티브파크","免費","兒童咖啡廳/美式(熱/冰)/冰茶 三選一",30.4],
+  [60,"하늘여행 행글라이더체험장","折扣","滑翔翼",30.4],
+  [61,"소인국테마파크","折扣","入場券",30.5,"","Day2選項"],
+  [62,"기억해제주 소품샵","折扣","每人 3,000韓元利用券",30.5],
+  [63,"아일랜드플라워 동물원","免費","入場券",30.7],
+  [64,"오설록","免費","抹茶軟雪糕",31.1,"","Day2"],
+  [65,"세계술박물관","免費","入場券",31.1],
+  [66,"일출랜드","免費","入場券",31.6],
+  [67,"단당류","免費","美式咖啡 or 香草茶",31.6],
+  [68,"그림카페","免費","飲品(美式/冰茶) + 航空宇宙博物館入場券",31.6,"","Day2啟用"],
+  [69,"거신XR","免費","4D體驗館入場券",32.2],
+  [70,"로보배틀","免費","Battle King 乘坐機械人",32.3],
+  [71,"놀멍쉬멍 짱구스토어","免費","蠟筆小新限定貼紙5種",33.5],
+  [72,"마노르블랑","折扣","成人4,000→2,500·青少年/兒童4,000→1,000",35.0],
+  [73,"현애원","免費","入場券",35.3],
+  [74,"제주선물가게 본점","免費","小型香薰套裝 or 時令水果隨機",36.5],
+  [75,"망고데이","免費","手工青橘茶/手工芒果雪糕/芒果茶/美式咖啡",36.8],
+  [76,"제주일도 성산점","折扣","成人/青少年每人5,000韓元折扣券",36.9],
+  [77,"아쿠아플라넷 제주","折扣","入場券（金額名單冇寫·估省~₩11,900）",37.5,"","Day3"],
+  [78,"흑돈쭐 제주성산일출봉점","折扣","每人5,000韓元折扣券",37.7,"","Day3晚餐"],
+  [79,"휘닉스 섭지 라운지","折扣","飲品現場10%折扣券",37.7],
+  [80,"휘닉스 플로이스트","折扣","現場10%折扣券",37.7]
+];
+function apTag(t){
+  const c = t==="免費" ? "#2a9d8f" : (t==="折扣" ? "#ff8c42" : "#8e6fd8");
+  return `<span style="background:${c};color:#fff;border-radius:8px;padding:1px 7px;font-size:.72rem;white-space:nowrap">${t}</span>`;
+}
+function buildAllpass(){
+  const free = AP_DATA.filter(r=>r[2].indexOf("免費")>=0).length;
+  let h = `<h3 class="sec">🎟️ Jeju All Pass 優惠清單（${AP_DATA.length}項）</h3>
+  <p style="font-size:.8rem;color:#555;margin:0 0 8px">來源 ticket.wokard.com（WOKA×VPASS）· <span style="color:#2a9d8f;font-weight:600">免費 ${free}</span> / <span style="color:#ff8c42;font-weight:600">折扣 ${AP_DATA.length-free}</span> · 距離由濟州市/機場一帶起計（大概）· ⭐=行程已用 · 每商家限用一次、名單會變，去前 app 對清楚。</p>
+  <input id="apq" oninput="apFilter(this.value)" placeholder="🔍 搜尋商家/優惠（中韓皆可，例：咖啡、박물관、Eco）" style="width:100%;padding:9px 11px;border:1px solid var(--line);border-radius:10px;font-size:.85rem;margin-bottom:10px">
+  <table id="aptbl"><tr><th>#</th><th>商家</th><th>類型</th><th>優惠</th><th>km</th></tr>`;
+  AP_DATA.forEach(r=>{
+    const [n,name,type,perk,dist,q,use] = r;
+    const query = q || name;
+    const star = use ? ` <span style="background:#fff3e6;color:#ff6b00;border:1px solid #ffd6ad;border-radius:7px;padding:0 5px;font-size:.68rem;white-space:nowrap">⭐${use}</span>` : "";
+    const bg = use ? ` style="background:#fff9f3"` : "";
+    const search = (name+" "+perk+" "+(use||"")).toLowerCase();
+    h += `<tr data-s="${search}"${bg}>
+      <td style="color:#999;font-size:.78rem">${n}</td>
+      <td><a target="_blank" href="${NAVER(query)}" style="color:var(--accent2);font-weight:600;text-decoration:none">${name}</a>${star}</td>
+      <td>${apTag(type)}</td>
+      <td style="font-size:.8rem">${perk}</td>
+      <td style="color:#999;font-size:.78rem;white-space:nowrap">${dist}</td>
+    </tr>`;
+  });
+  h += `</table><p id="apnone" style="display:none;color:#999;font-size:.85rem;text-align:center;padding:14px">冇符合嘅項目</p>`;
+  return h;
+}
+function apFilter(v){
+  v=(v||"").trim().toLowerCase();
+  let shown=0;
+  document.querySelectorAll("#aptbl tr[data-s]").forEach(tr=>{
+    const hit = !v || tr.dataset.s.indexOf(v)>=0;
+    tr.style.display = hit ? "" : "none";
+    if(hit) shown++;
+  });
+  const none=document.getElementById("apnone");
+  if(none) none.style.display = shown ? "none" : "block";
+}
+
 const CK_DATA = [
   { head:"✅ To-Do（出發前逐格剔）", sub:"", items:[
     "填 <b>e-Arrival Card</b>（抵韓前3日內＝6/17–6/19）→ e-arrivalcard.go.kr，填完截圖",
@@ -399,6 +523,7 @@ panels.forEach((p,i)=>{
   else if(p.custom==="food"){ panel.innerHTML = FOOD; }
   else if(p.custom==="checklist"){ panel.innerHTML = buildChecklist(); }
   else if(p.custom==="booking"){ panel.innerHTML = BOOKING; }
+  else if(p.custom==="allpass"){ panel.innerHTML = buildAllpass(); }
   else {
     let h = `<div class="dayhead"><span class="daynum">${p.tab}</span>
       <div><div class="daytitle">${p.title}</div><div class="daydate">${p.date}</div></div></div>`;
